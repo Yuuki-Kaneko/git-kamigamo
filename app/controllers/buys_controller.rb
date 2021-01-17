@@ -8,7 +8,7 @@ class BuysController < ApplicationController
         
         #Buyにuser_nicknameとbought(grocery)を保存 [top.id を元に]
         @co = @con.map{ |id| Top.find(id) }
-        @do = @co.pluck(:grocery)
+        @do = @co.pluck(:daily_necessities)
         Buy.create(user_id: create_buy[:user_id], bought: @do)
         
         #選択したhashに対応するtop.idを削除
