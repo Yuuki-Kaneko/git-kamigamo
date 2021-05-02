@@ -1,9 +1,9 @@
 <div class ="all_contents">
   <div class ="new_grocery">
     <%= form_for(@top) do |f| %>
-      <%= f.text_field :daily_necessities, placeholder: "何が足りない？" %>
-      <%= f.text_field :number, placeholder: "いくつ？" %>
-      <%= f.submit "投稿する" %>
+      <%= f.text_field :daily_necessities, placeholder: "What is needed?" %>
+      <%= f.text_field :number, placeholder: "How many？" %>
+      <%= f.submit "Add" %>
     <% end %>
   </div>
   
@@ -15,13 +15,13 @@
     <%= form_for(@buy, url: buys_path, method: :post) do |f| %>
       <div class ="field_top">
         <span><%= "#{@month}/#{@day}" %></span></br>
-        <%= f.label :bought, "【購入リスト】" %>
+        <%= f.label :bought, "【Purchase List】" %>
         <br>
         <ul>
         <% @tops.each do |top| %>
         <%= f.check_box :bought, {multiple: true}, top.id, nil %>
         <a href="/tops/<%= top.id %>/edit" ><%= "#{top.daily_necessities}　:　#{top.number}" %></a>
-        <a href="/tops/<%= top.id %>" data-method="delete" class ="delete" onclick="return confirm('本当に削除しますか？')" >削除</a>
+        <a href="/tops/<%= top.id %>" data-method="delete" class ="delete" onclick="return confirm('Is it really okay to delete it?')" >削除</a>
         <br>
         <% end %>
         </ul>
@@ -30,7 +30,7 @@
       <!-- userも同時選択 -->
         <%= f.select :user_id, User.all.map { |user| [user.nickname, user.id] } %>
           <div class="form-group">
-            <%= f.submit '購入', class: 'btn btn-primary btn-block' %>
+            <%= f.submit 'Purchase', class: 'btn btn-primary btn-block' %>
           </div>
     <% end %>
     </div>
@@ -41,7 +41,7 @@
       <% @bought.each do |bou| %>
         <div class="bought_box">
           <p><%= "#{bou.bought}" %><span><%= " #{time_ago_in_words bou.created_at}前" %></span></p>
-          <p class="bought_name"><%= "　→ " %><a href="/users/<%= "#{bou.user_id}" %>"><%= "#{bou.user.nickname}" %></a><%= "が購入" %></p>
+          <p class="bought_name"><%= "　→ " %><a href="/users/<%= "#{bou.user_id}" %>"><%= "#{bou.user.nickname}" %></a><%= "purchased" %></p>
         </div>
       <% end %>
     </div>
@@ -50,7 +50,7 @@
     
     <!-- ④ランキング機能 -->
     <div class ="right_content">
-      <h2><%= "#{@month}" %>月 購入ランキング</h2>
+      <h2>Ranking (this month)</h2>
         <div class ="inner_rank">
           <% num = 1 %>
           <% @rankings.zip(@purchased_numbers) do |rank,number| %>
@@ -59,7 +59,7 @@
           <img src="<%= "#{rank.image}" %>"
                onerror="this.src='/uploads/user/image/no-image-3.png'">
           <a href="/users/<%= "#{rank.id}" %>"><%= "#{rank.nickname}" %></a><br>
-          <span>[<%="#{number}" %>回購入]</span>
+          <span>[<%="#{number}" %> times]</span>
           </p>
           <% num += 1 %>
           <% end %>

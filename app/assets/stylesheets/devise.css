@@ -31,7 +31,9 @@
  
  .in_box {
      margin: 0px;
+     max-height: 220px;
      padding: 30px 100px;
+     overflow: scroll;
  }
  
  .in_box h2 {

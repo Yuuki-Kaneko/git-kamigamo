@@ -24,6 +24,12 @@ body, html {
   min-width: 960px;
   }
  
+  @media (max-width: 480px) {
+.wrapper {
+  min-width: 470px;    
+}
+}
+ 
  .header {
   background-image: url("menu_2.jpg");
   height: 50px;
@@ -66,6 +72,12 @@ body, html {
   .header-sub .post {
     color: white;
   }
+  
+ @media (max-width: 480px) {
+.header {
+    width: 470px;    
+}
+}
 
 .all_contents {
   background-color: #D3D3D3;
@@ -87,30 +99,36 @@ body, html {
 .contents {
    background: url("living.jpg") ;
    background-repeat: no-repeat;
-   background-size: 750px auto;
-   width: 750px;
+   background-size: 900px 600px;
+   height: 600px;
+   width: 900px;
    min-width: 750px;
    min-height: 435px;
    margin: 0 auto;
  }
+ 
+  @media (max-width: 480px) {
+ .contents {
+    background: url("kitchen.jpg");
+    background-repeat: no-repeat;
+    height: 320px;
+    width: 480px;
+    min-width: 480px;
+}
+ }
 
   .left_content {
-     width: 400px;
+     width: 480px;
      float: left;
-     margin: 30px 0 0 40px;
+     margin: 30px 0 0 60px;
    }
  
     .left_content .form {
        background: rgba(255,255,255,0.4);   /*背景の透かし*/
-       padding: 10px;
+       padding: 10px 20px 20px 20px;
        border-radius: 10px;
        box-shadow: 0 1px 2px grey;
      }
-     
-    .field_top {
-        max-height: 230px;
-        overflow: scroll;
-    }
  
       .left_content .field_top span {
          display: inline-block;
@@ -124,7 +142,9 @@ body, html {
  
       .left_content .field_top ul {
          margin: 5px;
-         padding: 5px;
+         padding-left: 20px;
+         max-height: 230px;
+         overflow: scroll;
        }
  
       .left_content .field_top a {
@@ -161,7 +181,7 @@ body, html {
 
 .bought {
    width: 370px;
-   max-height: 150px;
+   max-height: 140px;
    margin: 20px auto 10px;
    line-height: 17px;
    padding: 0 10px;
@@ -221,7 +241,13 @@ body, html {
        width: 20px;
        height: 20px;
      }
- 
+     
+@media (max-width: 480px) {
+  .all_contents {
+    width: 470px;    
+  }
+}
+
 footer {
     height: 40px;
     text-align: center;
@@ -231,9 +257,3 @@ footer {
 footer p {
     font-size: 12px;
 }
-
-.clearfix:after {
-   content: "";
-   clear: both;
-   display: block;
- }
