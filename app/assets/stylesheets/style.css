@@ -69,13 +69,30 @@ body, html {
     line-height: 50px			
   }
 
+    @media (max-width: 480px) {
+  .header-sub ul {
+    display: flex;										
+    justify-content: space-evenly;			/* 中央よせ */
+    padding-inline-start: 0px;
+    font-size: 13px;
+  }
+  
+  .header-sub li {
+    list-style: none;	
+    border-radius: 5px;
+    margin: 0px;
+    line-height: 50px
+  }
+     }
+ 
+
   .header-sub .post {
     color: white;
   }
   
  @media (max-width: 480px) {
 .header {
-    width: 470px;    
+    width: 480px;    
 }
 }
 
@@ -102,18 +119,17 @@ body, html {
    background-size: 900px 600px;
    height: 600px;
    width: 900px;
-   min-width: 750px;
-   min-height: 435px;
    margin: 0 auto;
  }
  
   @media (max-width: 480px) {
  .contents {
     background: url("kitchen.jpg");
-    background-repeat: no-repeat;
-    height: 320px;
+    background-repeat: no-repeat;       /* no-repeat:スライドは１枚だけ*/
+    background-size: 480px 570px;
+    height: 560px;
     width: 480px;
-    min-width: 480px;
+    overflow: scroll;
 }
  }
 
@@ -122,6 +138,14 @@ body, html {
      float: left;
      margin: 30px 0 0 60px;
    }
+   
+    @media (max-width: 480px) {
+     .left_content {
+       margin: 0;
+       padding: 0px;
+       float: none;
+     }
+     }
  
     .left_content .form {
        background: rgba(255,255,255,0.4);   /*背景の透かし*/
@@ -129,6 +153,13 @@ body, html {
        border-radius: 10px;
        box-shadow: 0 1px 2px grey;
      }
+    
+    @media (max-width: 480px) {
+    .left_content .form {
+       max-height: 500px;
+       margin: 20px;
+     }
+    }
  
       .left_content .field_top span {
          display: inline-block;
@@ -146,6 +177,12 @@ body, html {
          max-height: 230px;
          overflow: scroll;
        }
+      
+      @media (max-width: 480px) {
+       .left_content .field_top ul {
+         max-height: 230px;
+       }
+      }
  
       .left_content .field_top a {
          text-decoration: none;  /*アンダーライン消す*/
@@ -197,6 +234,13 @@ body, html {
      text-align: right;
   }
 
+ @media (max-width: 480px) {
+  .bought p {
+     line-height: 17px;
+     text-align: left;
+  }
+   }
+
   .bought span {
      font-size: 14px;
   }
@@ -214,7 +258,15 @@ body, html {
      width: 230px;
      float: left;
    }
- 
+  
+   @media (max-width: 480px) {
+   .right_content {
+     margin: 20px 0 0 50px;
+     width: 230px;
+     float: none;
+    }
+   }
+   
     .right_content h2 {
        margin: 10px;
        padding: 0px;
@@ -244,7 +296,7 @@ body, html {
      
 @media (max-width: 480px) {
   .all_contents {
-    width: 470px;    
+    width: 480px;    
   }
 }
 

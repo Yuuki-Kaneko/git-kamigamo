@@ -13,6 +13,11 @@
      background-position: center; /* この一行を追加するだけ！ */
  }
  
+ @media (max-width: 480px) {
+   .back_screen {
+     width: auto;
+   }
+ }
  .out_box {
      width: 400px;
      background: rgba(255,255,255,0.6);

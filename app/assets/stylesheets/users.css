@@ -10,14 +10,27 @@
      padding-top: 30px;
      background: url("rocker.jpg") ;
      background-repeat: no-repeat;
-     background-size: 750px auto;
+     background-size: 750px 750px;
+     background-position: center;
  }
+ 
+  @media (max-width: 480px) {
+   .user_show {
+     width: auto;
+   }
+  }
  
  .user_out_box {
      width: 500px;
      margin: 0 auto;
      background: rgba(255,255,255,0.6);
      box-shadow: 0 1px 2px grey;
+ }
+ 
+ @media (max-width: 480px) {
+  .user_out_box {
+     width: 400px;
+  }
  }
  
  .user_in_box {
